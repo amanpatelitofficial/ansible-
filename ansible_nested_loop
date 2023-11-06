@@ -7,8 +7,5 @@
         src: "{{ item.0.src }}"
         dest: "{{ item.1.dest }}"
       with_nested:
-        - - { src: /local/path/file1.txt, dest: /remote/path1/ }
-          - { src: /local/path/file2.txt, dest: /remote/path2/ }
-        - - { dest: /destination1/ }
-          - { dest: /destination2/ }
-
+        - { '/etc/passwd' , '/etc/passwd' , '/etc/group' }
+        - {'/home' , '/etc' , '/tmp' }
