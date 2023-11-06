@@ -1,0 +1,14 @@
+### how to encript a file
+    # vim file1
+    # ansible-vault encript file1
+    
+### how to view a vault or encripted file
+    # ansible-vault view file1
+
+### how to edit a file in encripted mode only
+    # ansible-vault edit file1
+
+### how to decript a file
+    # ansible-vault decript file1
+
+
