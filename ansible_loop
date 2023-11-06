@@ -6,7 +6,7 @@
       file:
         path: "{{ item }}"  # By default var 
         state: directory
-      with_items:
+      with_items:        
         - /tmp/dir1
         - /tmp/dir2
         - /tmp/dir3
