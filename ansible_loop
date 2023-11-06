@@ -4,7 +4,7 @@
   tasks:
     - name: Create directories using a loop
       file:
-        path: "{{ item }}"  # By default var 
+        path: "{{ item }}"  # Pre defined var ( item )
         state: directory
       with_items:        
         - /tmp/dir1
