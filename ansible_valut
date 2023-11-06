@@ -11,4 +11,5 @@
 ### how to decript a file
     # ansible-vault decript file1
 
-
+### how to create file directly on encription mode 
+    # ansible-vault create file2
