@@ -1,0 +1,13 @@
+---
+- name: Create directories on remote hosts
+  hosts: all
+  tasks:
+    - name: Create directories using a loop
+      file:
+        path: "{{ item }}"  # By default var 
+        state: directory
+      with_items:
+        - /tmp/dir1
+        - /tmp/dir2
+        - /tmp/dir3
+
