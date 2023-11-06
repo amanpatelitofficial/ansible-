@@ -1,0 +1,14 @@
+---
+- name: Copy files based on dictionary using a loop
+  hosts: all
+  tasks:
+    - name: Copy files to remote hosts
+      copy:
+        src: "{{ item.x }}"
+        dest: "{{ item.y }}"
+      with_items:
+            - { x: '/etc/passwd' y: '/home' }
+            - { x: '/etc/group' y: '/etc' }
+
+
+# Hash loop is used for copy things from one file to one location not all
