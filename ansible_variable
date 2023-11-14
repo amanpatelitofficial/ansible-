@@ -1,0 +1,14 @@
+- hosts : all
+  vars : 
+    mydir :  /home/os
+    myfile : /home/data
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+   - file :
+       path :  {{"myfile"}}
+       state :  file 
+       owner :  root
+       group  : root
+       mode  : 777
