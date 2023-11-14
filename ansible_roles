@@ -1,0 +1,7 @@
+# cd /etc/ansible/
+# ls
+# roles
+# ansible-galaxy init apache    -   command to create the roles
+# cd apache
+# ls
+# defaults  files  handlers  meta  tasks   templetes   testes  vars 
