@@ -1,0 +1,13 @@
+- name: Example Playbook
+  hosts: web_servers
+  tasks:
+    - name: Copy Apache configuration file
+      copy:
+        src: files/httpd.conf
+        dest: /etc/httpd/conf/httpd.conf
+      notify: Restart Apache
+  handlers:
+    - name: Restart Apache
+      service:
+        name: httpd
+        state: restarted
