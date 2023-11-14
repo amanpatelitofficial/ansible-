@@ -1,0 +1,6 @@
+mydir : /root/os
+myfile : /etcpassws
+mypkg :
+  - httpd
+  - tree
+  - samba

@@ -1,0 +1,18 @@
+- hosts : all
+  vars_files :
+     - variable   # path of var file
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+
+   - copy :
+       src :  {{"myfile"}}
+       state : {{"mydir"}}
+       owner :  root
+       group  : root
+       mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 
