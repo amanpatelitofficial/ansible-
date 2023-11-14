@@ -2,13 +2,22 @@
   vars : 
     mydir :  /home/os
     myfile : /home/data
+    mypkg :
+      - httpd
+      - tree
+      - samba 
   tasks : 
    - file : 
        path :  {{"mydir"}}
        state : directory 
+
    - file :
        path :  {{"myfile"}}
        state :  file 
        owner :  root
        group  : root
        mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 
