@@ -1,0 +1,9 @@
+$ ansible all -m copy -a 'svc=/etc/passwd dest=tmp'
+
+$ ansible all -m copy -a 'svc=/etc/passwd dest=tmp owner=aman group=aman mode=777'
+
+$ ansible all -m copy -a 'svc=/etc/passwd dest=tmp owner=aman group=aman mode=777 backup=yes'
+
+$ ansible all -m copy -a 'svc=/etc/passwd remote_src=yes dest=tmp owner=aman group=aman mode=777 backup=yes'
+
+$ ansible all -m copy -a 'content="Welcome to india" dest=/tmp/index.html'

@@ -1,0 +1,3 @@
+Just like command module -- it is used for script
+
+$ ansible all -m shell 'sh ./os.sh'
