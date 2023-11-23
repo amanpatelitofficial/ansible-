@@ -1,0 +1,28 @@
+If local user want to his/her iwn inverntery then,
+
+$ cd /home/aman/
+$ mkdir myinventery
+$ cd myinventery
+$ vim acb
+  [web]
+  192.168.10.1
+
+$ ansible web --list-hosts  -i myinventery/abc 
+
+-----------------------------------------------------------------------------------------------
+
+                               or 
+
+$ cp -rf /etc/ansible/ansible.cfg  /home/aman/myinventery/
+$ export ANSIBLE_CONFIG=/home/aman/myinventery/ansible.cfg
+$ ansible --version 
+$ vim /home/aman/myinventery/ansible.cfg
+   inventery /home/aman/myinventery/abc
+   
+$ ansible web --list-hosts
+
+## If the ansible.cfg file is copied in /home/aman/myinventery,  /home/aman/,   /etc/ansible/ansible.cfg
+it will read to /home/aman/myinventery because we have set it environment file
+
+
+
