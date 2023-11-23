@@ -1,0 +1,10 @@
+
+             Command module   - commmand module is used for single command
+
+$ ansible web -m command -a "uptime"
+$ ansible web -m command -a "touch /aman"
+                       
+
+                raw module    - commmand module is used for single command
+
+$ ansible web -m  raw  -a "ls;date;uptime"
