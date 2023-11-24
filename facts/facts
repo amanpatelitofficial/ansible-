@@ -1,0 +1,41 @@
+$ ansible all -m setup 
+
+$ ansible all -m setup -a '.................'
+
+
+--------------------------------------------------------------------------------
+mkdir /etc/ansible/facts.d ------------- on worker node 
+vim worker-node-1.fact
+[worker-node-1]
+kernel=4.5
+httpd=7.5
+
+$ ansible all -m setup - a 'filter=ansible_local'
+
+
+--------------------------------------------------------------------------------
+
+- hosts : all
+  gather_facts: false 
+  vars : 
+    mydir :  /home/os
+    myfile : /home/data
+    mypkg :
+      - httpd
+      - tree
+      - samba 
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+
+   - file :
+       path :  {{"myfile"}}
+       state :  file 
+       owner :  root
+       group  : root
+       mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 
