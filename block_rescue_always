@@ -1,0 +1,11 @@
+- name: Example of using rescue
+  block:
+    - name: Task 1
+      # Task 1 details
+    - name: Task 2
+      # Task 2 details
+  rescue:
+    - name: Rescue Task
+      # Rescue Task details
+  always:
+    - name: Always Execute Task
