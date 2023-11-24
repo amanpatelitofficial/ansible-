@@ -1,0 +1,61 @@
+$ vim /etc/ansible/hosts
+
+[app]
+192.168.29.10   mydir=dir1  myfile=file1 mypkg=httpd
+
+[web]
+192.168.29.11  mydir=os  myfile=data mypkg=open-ssh
+
+
+                          or 
+
+[app]
+192.168.29.10   
+
+[web]
+192.168.29.11  
+
+[app:vars]
+mydir=dir1
+myfile=file1
+mypkg=httpd
+
+------------------------------------------------------------------------
+
+- hosts : app
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+
+   - file :
+       path :  {{"myfile"}}
+       state :  file 
+       owner :  root
+       group  : root
+       mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 
+
+
+----------------------------------
+
+
+- hosts : web
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+
+   - file :
+       path :  {{"myfile"}}
+       state :  file 
+       owner :  root
+       group  : root
+       mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 

@@ -17,3 +17,10 @@
 
 $ ansible-playbook os.yml -e mydir=dir1 -e myfile=file1 -e mypkg=httpd
 
+## Note ##
+
+If the vars are in main.yml file & we are also appling on the time of apply then it will give the prioty to at the time of apply
+
+If the vars are in main.yml file & we are also have main.vars then it will give the prioty to at main.vars time of apply
+
+

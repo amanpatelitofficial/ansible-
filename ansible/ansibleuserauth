@@ -1,0 +1,15 @@
+$ ansible-playbook os.yml -u root -k 
+
+                     or
+
+$ vim /etc/ansible/hosts
+
+[app]
+192.168.29.1  ansible_ssh_user=root ansible_ssh_pass=redhat@1234567 ansible_ssh_port=22
+
+[app:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=redhat@1234567
+ansible_ssh_port=22
+
+
