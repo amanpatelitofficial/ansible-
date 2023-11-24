@@ -4,8 +4,8 @@
   tasks:
     - name: Copy files to remote host
       copy:
-        src: "{{ item.0.src }}"
-        dest: "{{ item.1.dest }}"
+        src: "{{ item[0]}}"
+        dest: "{{ item[1] }}"
       with_nested:
         - { '/etc/passwd' , '/etc/passwd' , '/etc/group' }
         - {'/home' , '/etc' , '/tmp' }
