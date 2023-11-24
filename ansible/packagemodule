@@ -1,0 +1,3 @@
+ansible all -m yum -a  'name=httpd*  state=present'
+ansible all -m yum -a  'name='*' state=present exclude=kernal*, https*'
+ansible all -m yum -a 'name=https....................    state=present'
