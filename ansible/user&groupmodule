@@ -1,0 +1,7 @@
+ansible all -m group -a 'name=hcl state=present'
+
+ansible all -m user -a 'name=Aman comment="Cloud&DevOps" uid=2001 group=hcl'
+
+ansible all -m user -a 'name=Priyank shell=/sbin/nologin/ groups=hcl,os append=yes'
+
+ansible all -m user -a  'name=Aman generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa'
