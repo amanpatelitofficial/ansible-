@@ -1,0 +1,10 @@
+ansible all -m lineinfile -a 'path=/etc/sudores "line= aman ALL=(ALL) ALL" '
+
+ansible all -m lineinfile -a 'path=/etc/sudores "line= aman ALL=(ALL) ALL" state=absent'
+
+ansible all -m lineinfile -a 'path=/etc/sudores "line= aman ALL=(ALL) ALL" insertafter=BOF'
+
+ansible all -m lineinfile -a 'path=/etc/sudores "line= aman ALL=(ALL) ALL" insertafter="^root"'
+
+ansible all -m lineinfile -a 'path=/etc/sudores "line= aman ALL=(ALL) ALL" regexp="^root"'  --- to replace 
+
