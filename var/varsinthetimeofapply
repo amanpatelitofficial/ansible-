@@ -1,0 +1,19 @@
+- hosts : all
+  tasks : 
+   - file : 
+       path :  {{"mydir"}}
+       state : directory 
+
+   - file :
+       path :  {{"myfile"}}
+       state :  file 
+       owner :  root
+       group  : root
+       mode  : 777
+
+   - yum :
+       name : {{"mypkg"}}
+       state : present 
+
+$ ansible-playbook os.yml -e mydir=dir1 -e myfile=file1 -e mypkg=httpd
+
