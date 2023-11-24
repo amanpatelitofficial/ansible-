@@ -1,0 +1,16 @@
+---
+- name: Example Playbook with Tags
+  hosts: web_servers
+  tasks:
+    - name: Update packages
+      package:
+        name: "*"
+        state: latest
+      egnore_error: yes
+
+    - name: Ensure Apache is installed
+      package:
+        name: apache2
+        state: present
+      tags:
+        - apache
